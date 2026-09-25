@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AS 9618 Chapter 2 Quiz</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f8;margin:0;color:#17202a}
+.wrap{max-width:850px;margin:0 auto;padding:28px 18px}
+.card{background:#fff;border-radius:16px;padding:26px;box-shadow:0 4px 18px #0001}
+h1{margin:0 0 6px}.muted{color:#68737d}.bar{height:8px;background:#e6e9ed;border-radius:99px;margin:18px 0 24px}.fill{height:100%;background:#2563eb;border-radius:99px;width:0}
+.option{display:block;border:1px solid #d8dde3;border-radius:10px;padding:13px;margin:10px 0;cursor:pointer}.option:hover{background:#f7f9fb}
+button{border:0;border-radius:10px;padding:12px 18px;font-size:15px;cursor:pointer;background:#2563eb;color:white}.secondary{background:#e9edf2;color:#17202a}
+.actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.feedback{margin-top:18px;padding:14px;border-radius:10px;background:#eef6ff}.wrong{background:#fff3f0}.hidden{display:none}.score{font-size:42px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<div class="muted">AS 9618 • Chapter 2</div>
+<h1>Network Types and Network Models</h1>
+<div id="status" class="muted"></div>
+<div class="bar"><div id="fill" class="fill"></div></div>
+<div id="quiz"></div>
+<div class="actions"><button id="prev" class="secondary">Previous</button><button id="next">Check answer</button></div>
+<div id="result" class="hidden"></div>
+</div>
+</div>
+<script>
+const questions=[
+["LAN and WAN","Define a LAN.",["A network covering a small geographical area such as a building or school campus.","A network connecting computers in different countries.","A network that always uses a dedicated server.","A personal network around one user."],0,"A LAN covers a relatively small geographical area, such as a building or school campus."],
+["LAN and WAN","Define a WAN.",["A network covering only one room.","A network covering a large geographical area and connecting networks over long distances.","A network with no server.","A network used only by one person."],1,"A WAN covers a large geographical area and connects networks over long distances."],
+["LAN and WAN","Which is a characteristic of a LAN?",["Usually covers a small geographical area and may be managed by one organisation.","Always connects different countries.","Always depends on telecommunications infrastructure.","Must use peer-to-peer networking."],0,"A LAN usually covers a relatively small area and is often owned and managed by one organisation."],
+["LAN and WAN","Which is a characteristic of a WAN?",["It can only operate inside one building.","It cannot connect separate networks.","It covers a large geographical area and may use telecommunications infrastructure.","It must have no central server."],2,"A WAN covers a large geographical area and may use telecommunications infrastructure."],
+["LAN vs WAN","A company has offices in Ulaanbaatar, Tokyo and London. Which type of network is more appropriate?",["LAN","WAN"],1,"The offices are in different countries, so a large geographical area must be covered."],
+["LAN vs WAN","Why is a WAN appropriate?",["Because it connects networks over long distances.","Because it is always cheaper than a LAN.","Because it requires no telecommunications infrastructure.","Because it only works inside one building."],0,"A WAN allows separate office networks to communicate over long distances."],
+["LAN vs WAN","Which is a possible disadvantage of using a WAN?",["It cannot connect different locations.","Higher cost or greater dependence on telecommunications infrastructure.","It cannot communicate between networks.","It always requires every computer to be a server."],1,"Possible disadvantages include higher cost, greater dependence on telecommunications infrastructure and potentially greater latency."],
+["Client-Server Model","Which definition best describes the client-server model?",["All computers always have exactly the same role.","Dedicated servers provide or manage resources and services for client computers.","Computers communicate only without a server.","A network that only covers a small geographical area."],1,"Dedicated servers provide or manage resources and services for client computers."],
+["Client-Server Model","What is a main role of the server in the school scenario?",["Only provide Internet access to one student.","Store student files and manage access; it may also provide authentication and other services.","Replace every client computer.","Prevent students from logging in."],1,"The server stores student files and can manage access. It may also provide authentication and other network services."],
+["Client-Server Model","What is one disadvantage of the client-server model?",["There is never any central management.","A server failure can cause clients to lose access to important resources or services.","Files cannot be shared.","It cannot provide authentication."],1,"If the server fails, clients may lose access to important resources and services; setup and maintenance can also cost more."],
+["Peer-to-Peer Model","A small group shares files directly between computers with no dedicated server. Which model is being used?",["Client-server","Peer-to-peer","WAN","Thin client"],1,"The computers communicate directly and there is no dedicated server."],
+["Peer-to-Peer Model","How can files be shared in a peer-to-peer model?",["Only through a central server.","Computers communicate directly and make files or resources available to other computers.","Only through a WAN provider.","Only by using thin clients."],1,"Computers can communicate directly and make their files or resources available to other computers."],
+["Peer-to-Peer Model","Which TWO are advantages for a small network?",["Relatively inexpensive","No dedicated server required","Always easier to manage as it grows","Requires a dedicated network administrator"],[0,1],"The answer key identifies relatively inexpensive and no dedicated server required as advantages."],
+["Client-Server vs Peer-to-Peer","Which statement correctly compares the two models?",["Client-server uses a dedicated server to manage/provide resources; peer-to-peer computers can act as both clients and providers.","Both models require a dedicated server.","Peer-to-peer always provides better centralised security.","Client-server has no central management."],0,"Client-server has a dedicated server, while peer-to-peer computers can act as both clients and providers of resources."],
+["Client-Server vs Peer-to-Peer","Which advantage is associated with client-server?",["No dedicated server is required.","Centralised management and security.","It becomes easier to manage as the network grows without administration.","Every computer must store every file."],1,"Centralised management and security are advantages of the client-server model."],
+["Client-Server vs Peer-to-Peer","Which disadvantage is associated with peer-to-peer?",["Server failure affects every client.","Management and security become difficult as the network grows.","It always requires expensive server hardware.","It cannot share resources."],1,"Management and security can become difficult as the network grows."],
+["Justify a Network Model","A small company has eight computers, a limited budget and no network administrator. Which model is suitable?",["Client-server","Peer-to-peer"],1,"Peer-to-peer is suitable for a small network with a limited budget and no network administrator."],
+["Justify a Network Model","Which TWO reasons support this choice?",["Only eight computers","Limited budget","A dedicated server is required","A full-time network administrator is required"],[0,1],"The scenario has only eight computers and a limited budget. Peer-to-peer does not require a dedicated server or network administrator."],
+["Justify a Network Model","What is a disadvantage if the network grows to 100 computers?",["There will be too much centralised management.","Managing shared resources and security becomes more difficult because there is no central point for users and resources.","A dedicated server automatically appears.","Files can no longer be shared at all."],1,"As the network grows, administration, security and troubleshooting become harder without a central point of management."],
+["Thin Client and Thick Client","What is a thin client?",["A computer that relies heavily on a server for processing and/or storage and has limited local requirements.","A computer that performs all processing locally.","A dedicated server.","A computer that cannot connect to a network."],0,"A thin client relies heavily on a server for processing and/or storage."],
+["Thin Client and Thick Client","What is a thick client?",["A computer with very limited local processing.","A computer that performs more processing locally and uses its own processing power and storage.","A server that stores all applications.","A computer that cannot run applications locally."],1,"A thick client performs more processing locally and can run applications using its own processing power and storage."],
+["Thin Client and Thick Client","Which statement correctly gives the difference?",["Thin clients rely more on local resources; thick clients rely more on servers.","Thin clients rely more on servers; thick clients rely more on local resources.","There is no difference.","Both require exactly the same local resources."],1,"A thin client relies more on the server, whereas a thick client relies more on local resources."],
+["Thin Client vs Thick Client","A university stores most applications and data on central servers. Why could thin clients be suitable?",["They can send requests to the server and receive results, reducing local hardware requirements.","They must store all applications locally.","They work without any network connection.","They require every student to have a dedicated server."],0,"Most applications and data are already on central servers, so thin clients can send requests and receive results, reducing local hardware requirements."],
+["Thin Client vs Thick Client","Which is an advantage of thin clients?",["Higher local hardware requirements.","Lower-specification/cheaper client hardware may be used and management can be centralised.","They always work if the server fails.","They eliminate the need for a network."],1,"Thin clients can use lower-specification hardware and management can be centralised."],
+["Thin Client vs Thick Client","Which is a disadvantage of thin clients?",["They require no network.","If the server or network fails, clients may lose access to applications or data.","They always need more local storage.","They cannot use central servers."],1,"Dependence on the server/network means a failure can prevent access to applications or data."],
+["Thin Client vs Thick Client","When might a thick client be preferred?",["When students need to run applications locally or continue working when the network/server is unavailable.","When all processing must happen on a central server.","When no local processing is required.","When there is no need for storage."],0,"A thick client may be preferred when local processing is needed or users must continue working if the network/server is unavailable."]
+];
+let i=0,score=0,answered=false;
+const quiz=document.getElementById("quiz"),status=document.getElementById("status"),fill=document.getElementById("fill"),next=document.getElementById("next"),prev=document.getElementById("prev"),result=document.getElementById("result");
+function render(){
+ const q=questions[i]; answered=false;
+ status.textContent=`Question ${i+1} of ${questions.length} • ${q[0]}`;
+ fill.style.width=((i)/questions.length*100)+"%";
+ let html=`<h2>${q[1]}</h2><div>`;
+ q[2].forEach((o,n)=>html+=`<label class="option"><input type="${Array.isArray(q[3])?'checkbox':'radio'}" name="answer" value="${n}"> ${o}</label>`);
+ html+=`</div><div id="feedback"></div>`; quiz.innerHTML=html;
+ prev.disabled=i===0; next.textContent="Check answer";
+}
+function check(){
+ const q=questions[i], selected=[...document.querySelectorAll('input[name=answer]:checked')].map(x=>+x.value).sort((a,b)=>a-b);
+ if(!selected.length)return;
+ const correct=(Array.isArray(q[3])?q[3]:[q[3]]).slice().sort((a,b)=>a-b);
+ const ok=selected.length===correct.length&&selected.every((v,n)=>v===correct[n]);
+ if(ok)score++;
+ document.getElementById("feedback").innerHTML=`<div class="feedback ${ok?'':'wrong'}"><strong>${ok?'✓ Correct':'✗ Not quite'}</strong><br>${q[4]}</div>`;
+ answered=true; next.textContent=i===questions.length-1?"See result":"Next";
+}
+function advance(){
+ if(!answered){check();return}
+ if(i<questions.length-1){i++;render()}else{quiz.innerHTML="";document.querySelector(".actions").classList.add("hidden");fill.style.width="100%";status.textContent="Quiz complete";result.classList.remove("hidden");result.innerHTML=`<div class="score">${score}/${questions.length}</div><p>${Math.round(score/questions.length*100)}% correct</p><button onclick="location.reload()">Try again</button>`}
+}
+next.onclick=advance;prev.onclick=()=>{if(i>0){i--;render()}};render();
+</script>
+</body>
+</html>
