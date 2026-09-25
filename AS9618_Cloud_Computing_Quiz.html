@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AS 9618 Cloud Computing Quiz</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;margin:0;color:#1f2937}
+.container{max-width:900px;margin:40px auto;padding:24px}
+.card{background:white;border-radius:16px;padding:28px;box-shadow:0 8px 25px rgba(0,0,0,.08)}
+h1{margin-top:0;color:#17365d}
+.subtitle{color:#667085}
+.question{border-top:1px solid #e5e7eb;padding:22px 0}
+.question:first-child{border-top:0}
+.options label{display:block;padding:12px;margin:8px 0;background:#f8fafc;border:1px solid #dbe3ec;border-radius:10px;cursor:pointer}
+.options label:hover{background:#eef5ff}
+button{background:#17365d;color:white;border:0;border-radius:10px;padding:13px 22px;font-size:16px;cursor:pointer}
+button:hover{opacity:.9}
+#result{margin-top:22px;padding:18px;border-radius:12px;background:#eef6ff;display:none}
+.correct{border-color:#22c55e!important;background:#ecfdf3!important}
+.wrong{border-color:#ef4444!important;background:#fef2f2!important}
+.feedback{font-size:14px;margin-top:8px}
+.small{font-size:13px;color:#667085}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>AS 9618 Computer Science</h1>
+<p class="subtitle"><b>Cloud Storage & Cloud Software — Benefits and Drawbacks Quiz</b></p>
+<p class="small">Choose the best answer. This quiz is based on the class notes provided by your teacher.</p>
+
+<form id="quiz">
+
+<div class="question" data-answer="B">
+<b>1. Which is an advantage of cloud storage?</b>
+<div class="options">
+<label><input type="radio" name="q1" value="A"> A. It always works without an Internet connection.</label>
+<label><input type="radio" name="q1" value="B"> B. Files can be accessed from anywhere with an Internet connection.</label>
+<label><input type="radio" name="q1" value="C"> C. It requires every user to buy expensive storage hardware.</label>
+<label><input type="radio" name="q1" value="D"> D. The user has complete control over the provider's servers.</label>
+</div></div>
+
+<div class="question" data-answer="C">
+<b>2. Which is a drawback of cloud storage?</b>
+<div class="options">
+<label><input type="radio" name="q2" value="A"> A. Data can be backed up across multiple servers.</label>
+<label><input type="radio" name="q2" value="B"> B. Storage can be increased or decreased as needed.</label>
+<label><input type="radio" name="q2" value="C"> C. Access to files depends on a reliable Internet connection.</label>
+<label><input type="radio" name="q2" value="D"> D. Files can be shared easily with others.</label>
+</div></div>
+
+<div class="question" data-answer="A">
+<b>3. Why can cloud storage be described as scalable?</b>
+<div class="options">
+<label><input type="radio" name="q3" value="A"> A. Storage capacity can be increased or decreased as needed.</label>
+<label><input type="radio" name="q3" value="B"> B. It removes the need for an Internet connection.</label>
+<label><input type="radio" name="q3" value="C"> C. It guarantees that data can never be lost.</label>
+<label><input type="radio" name="q3" value="D"> D. It means the user owns the provider's data centre.</label>
+</div></div>
+
+<div class="question" data-answer="D">
+<b>4. Which statement best describes a security advantage of cloud storage?</b>
+<div class="options">
+<label><input type="radio" name="q4" value="A"> A. The user is responsible for all server security.</label>
+<label><input type="radio" name="q4" value="B"> B. Data can never be intercepted during transmission.</label>
+<label><input type="radio" name="q4" value="C"> C. The provider gives the user unlimited control over security.</label>
+<label><input type="radio" name="q4" value="D"> D. Providers may offer security features such as encryption and multi-factor authentication.</label>
+</div></div>
+
+<div class="question" data-answer="C">
+<b>5. Which is a possible drawback of cloud storage for long-term use?</b>
+<div class="options">
+<label><input type="radio" name="q5" value="A"> A. It cannot be accessed from different devices.</label>
+<label><input type="radio" name="q5" value="B"> B. It cannot be used for large amounts of data.</label>
+<label><input type="radio" name="q5" value="C"> C. It can become expensive because of ongoing subscription or data-transfer costs.</label>
+<label><input type="radio" name="q5" value="D"> D. It cannot provide automatic backups.</label>
+</div></div>
+
+<div class="question" data-answer="B">
+<b>6. Which is an advantage of cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q6" value="A"> A. It must always be installed on every device.</label>
+<label><input type="radio" name="q6" value="B"> B. It can often be accessed across multiple devices using an Internet connection.</label>
+<label><input type="radio" name="q6" value="C"> C. The user must maintain the software manually.</label>
+<label><input type="radio" name="q6" value="D"> D. It can only be used on one operating system.</label>
+</div></div>
+
+<div class="question" data-answer="A">
+<b>7. Why is no installation needed for some cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q7" value="A"> A. The software runs through a browser or other online service.</label>
+<label><input type="radio" name="q7" value="B"> B. The software is stored permanently on the user's local hard drive.</label>
+<label><input type="radio" name="q7" value="C"> C. The software does not require any computer hardware.</label>
+<label><input type="radio" name="q7" value="D"> D. The software works without any network connection.</label>
+</div></div>
+
+<div class="question" data-answer="D">
+<b>8. Who normally handles automatic updates for cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q8" value="A"> A. Each individual user</label>
+<label><input type="radio" name="q8" value="B"> B. The school's IT department only</label>
+<label><input type="radio" name="q8" value="C"> C. The computer manufacturer</label>
+<label><input type="radio" name="q8" value="D"> D. The cloud software provider</label>
+</div></div>
+
+<div class="question" data-answer="C">
+<b>9. Which is a drawback of cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q9" value="A"> A. Automatic updates can reduce maintenance work.</label>
+<label><input type="radio" name="q9" value="B"> B. It can be accessed from multiple devices.</label>
+<label><input type="radio" name="q9" value="C"> C. Its performance can depend on Internet speed.</label>
+<label><input type="radio" name="q9" value="D"> D. The provider can handle maintenance.</label>
+</div></div>
+
+<div class="question" data-answer="B">
+<b>10. Which statement explains a privacy concern with cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q10" value="A"> A. Data is always stored only on the user's local device.</label>
+<label><input type="radio" name="q10" value="B"> B. User data may be stored on the provider's servers.</label>
+<label><input type="radio" name="q10" value="C"> C. Cloud software never uses encryption.</label>
+<label><input type="radio" name="q10" value="D"> D. Users cannot access their data from different devices.</label>
+</div></div>
+
+<div class="question" data-answer="A">
+<b>11. Which statement best describes the maintenance advantage of cloud software?</b>
+<div class="options">
+<label><input type="radio" name="q11" value="A"> A. The provider handles maintenance, reducing the need for specialist IT staff.</label>
+<label><input type="radio" name="q11" value="B"> B. Users must repair the provider's servers themselves.</label>
+<label><input type="radio" name="q11" value="C"> C. Maintenance is impossible because the software is online.</label>
+<label><input type="radio" name="q11" value="D"> D. The user must install every security patch manually.</label>
+</div></div>
+
+<div class="question" data-answer="D">
+<b>12. What does scalability mean in relation to a cloud software plan?</b>
+<div class="options">
+<label><input type="radio" name="q12" value="A"> A. The software can only be used on one device.</label>
+<label><input type="radio" name="q12" value="B"> B. The provider removes all subscription costs.</label>
+<label><input type="radio" name="q12" value="C"> C. The software will work without an Internet connection.</label>
+<label><input type="radio" name="q12" value="D"> D. The user can upgrade or downgrade the software plan as needed.</label>
+</div></div>
+
+<div class="question" data-answer="C">
+<b>13. A company uses cloud storage. Employees cannot access important files because the Internet connection is unavailable. Which drawback does this demonstrate?</b>
+<div class="options">
+<label><input type="radio" name="q13" value="A"> A. Scalability</label>
+<label><input type="radio" name="q13" value="B"> B. Automatic backup</label>
+<label><input type="radio" name="q13" value="C"> C. Dependence on Internet access</label>
+<label><input type="radio" name="q13" value="D"> D. Reduced hardware costs</label>
+</div></div>
+
+<div class="question" data-answer="B">
+<b>14. Which is a benefit of using cloud storage instead of buying large amounts of local storage hardware?</b>
+<div class="options">
+<label><input type="radio" name="q14" value="A"> A. The user must purchase a new server for every additional file.</label>
+<label><input type="radio" name="q14" value="B"> B. The organisation may avoid buying expensive storage hardware.</label>
+<label><input type="radio" name="q14" value="C"> C. The organisation has complete physical control of the provider's servers.</label>
+<label><input type="radio" name="q14" value="D"> D. The data can only be accessed from one computer.</label>
+</div></div>
+
+<div class="question" data-answer="D">
+<b>15. Which statement about cloud services and control is most accurate?</b>
+<div class="options">
+<label><input type="radio" name="q15" value="A"> A. Users always have complete control over provider security decisions.</label>
+<label><input type="radio" name="q15" value="B"> B. Cloud services remove all legal responsibilities for protecting personal data.</label>
+<label><input type="radio" name="q15" value="C"> C. Cloud services guarantee that every feature is identical to a locally installed version.</label>
+<label><input type="radio" name="q15" value="D"> D. Users may have less control because the provider manages parts of the service and its updates.</label>
+</div></div>
+
+</form>
+
+<button onclick="gradeQuiz()">Submit Quiz</button>
+<div id="result"></div>
+</div>
+</div>
+
+<script>
+function gradeQuiz(){
+ const questions=document.querySelectorAll('.question');
+ let score=0, answered=0;
+ questions.forEach((q,i)=>{
+   const answer=q.dataset.answer;
+   const selected=q.querySelector('input:checked');
+   const labels=q.querySelectorAll('label');
+   labels.forEach(l=>l.classList.remove('correct','wrong'));
+   if(selected){
+     answered++;
+     if(selected.value===answer){
+       score++;
+       selected.parentElement.classList.add('correct');
+     }else{
+       selected.parentElement.classList.add('wrong');
+       [...labels].find(l=>l.querySelector('input').value===answer).classList.add('correct');
+     }
+   }else{
+     [...labels].find(l=>l.querySelector('input').value===answer).classList.add('correct');
+   }
+ });
+ const result=document.getElementById('result');
+ const percent=Math.round(score/questions.length*100);
+ result.style.display='block';
+ result.innerHTML=`<b>Score: ${score}/${questions.length} (${percent}%)</b><br>You answered ${answered} question(s). Correct answers are highlighted in green.`;
+ window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
